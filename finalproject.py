@@ -6,6 +6,7 @@
 import random
 
 class NumberGuess:
+    # This class allows you to the play Random Number Guessing Game.
 
     def __init__(self, name: str, difficulty: str):
         self.player = name
@@ -16,9 +17,11 @@ class NumberGuess:
         self.gamesplayed = 0
 
     def __str__(self):
+        # This returns the Player's Name and Stats.
         return f"Player: {self.player} | Difficulty: {self.diff}| Games Played: {self.gamesplayed} | Record: {self.record} | Last Game: {self.lastscore}"
     
     def rand_num(self):
+        # This function changes the "boundaries" for the random number depending on the difficulty chosen.
         if self.diff == "Easy":
             random_int = random.randint(1, 10)
         elif self.diff == "Medium":
@@ -34,6 +37,7 @@ class NumberGuess:
         return random_int
 
     def set_boundary(self):
+        # This function changes the upper bound depending on the difficulty, for the (num_range_high) variable in the play() function.
         if self.diff == "Easy":
             return 10
         elif self.diff == "Medium":
@@ -46,6 +50,7 @@ class NumberGuess:
             return 10000
 
     def play(self):
+        # This is the main function that takes a guess from the player and checks if the guess is valid.
 
         random_int = self.rand_num()
         num_range_high = self.set_boundary()
@@ -87,6 +92,7 @@ class NumberGuess:
         return f"You Won in {self.lastscore} Guesses! Type {self.player}.play() to Play Again!"
 
     def check_record(self):
+        # This function checks if the new score is less than the player's record, so the record can be updated.
         if isinstance(self.lastscore, int) and isinstance(self.record, int):
             return self.lastscore < self.record
         if self.record is None:

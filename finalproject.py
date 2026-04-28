@@ -2,7 +2,6 @@
 # Date: 4-27-2026
 # Final Project : Number Guessing Game
 
-# new comment
 
 import random
 

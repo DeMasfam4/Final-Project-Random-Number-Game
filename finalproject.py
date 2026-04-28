@@ -72,9 +72,11 @@ class NumberGuess:
                 if guess > random_int:
                     print("Too High! Guess a Lower Number.")
                     self.attempts += 1
+                    print(f"Attempts {self.attempts}")
                 elif guess < random_int:
                     print("Too Low! Guess a Higher Number.")
                     self.attempts += 1
+                    print(f"Attempts {self.attempts}")
 
             except ValueError:
                 print("That is Not a Integer! Try Again.")

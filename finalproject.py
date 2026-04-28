@@ -18,7 +18,7 @@ class NumberGuess:
 
     def __str__(self):
         # This returns the Player's Name and Stats.
-        return f"Player: {self.player} | Difficulty: {self.diff}| Games Played: {self.gamesplayed} | Record: {self.record} | Last Game: {self.lastscore}"
+        return f"Player: {self.player} | Difficulty: {self.diff} | Games Played: {self.gamesplayed} | Record: {self.record} | Last Game: {self.lastscore}"
     
     def rand_num(self):
         # This function changes the "boundaries" for the random number depending on the difficulty chosen.

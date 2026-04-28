@@ -9,16 +9,12 @@ class NumberGuess:
     # This class allows you to the play Random Number Guessing Game.
 
     def __init__(self, name: str, difficulty: str):
-        self.player = name
         self.diff = difficulty
-        self.attempts = 0
-        self.lastscore = None
-        self.record = None
-        self.gamesplayed = 0
+        self.stats = {"Player Name": name, "Games Played": 0, "Record": None, "Last Game": None, "Attempts": 0}
 
     def __str__(self):
         # This returns the Player's Name and Stats.
-        return f"Player: {self.player} | Difficulty: {self.diff} | Games Played: {self.gamesplayed} | Record: {self.record} | Last Game: {self.lastscore}"
+        return f"Player: {self.stats["Player Name"]} | Difficulty: {self.diff} | Games Played: {self.stats["Games Played"]} | Record: {self.stats["Record"]} | Last Game: {self.stats["Last Game"]}"
     
     def rand_num(self):
         # This function changes the "boundaries" for the random number depending on the difficulty chosen.
@@ -71,33 +67,33 @@ class NumberGuess:
 
                 if guess > random_int:
                     print("Too High! Guess a Lower Number.")
-                    self.attempts += 1
-                    print(f"Attempts {self.attempts}")
+                    self.stats["Attempts"] += 1
+                    print(f"Attempts {self.stats["Attempts"]}")
                 elif guess < random_int:
                     print("Too Low! Guess a Higher Number.")
-                    self.attempts += 1
-                    print(f"Attempts {self.attempts}")
+                    self.stats["Attempts"] += 1
+                    print(f"Attempts {self.stats["Attempts"]}")
 
             except ValueError:
                 print("That is Not a Integer! Try Again.")
 
-        self.attempts += 1
+        self.stats["Attempts"] += 1
 
-        self.lastscore = self.attempts
-        self.attempts = 0
-        self.gamesplayed += 1
+        self.stats["Last Game"] = self.stats["Attempts"]
+        self.stats["Attempts"] = 0
+        self.stats["Games Played"] += 1
         
         if self.check_record(): # If true, update the record and give a different winning message.
-            self.record = self.lastscore
-            return f"You Got a New Record of {self.record} Guesses! Type {self.player}.play() to Play Again!"
+            self.stats["Record"] = self.stats["Last Game"]
+            return f"You Got a New Record of {self.stats["Record"]} Guesses! Type {self.stats["Player Name"]}.play() to Play Again!"
 
-        return f"You Won in {self.lastscore} Guesses! Type {self.player}.play() to Play Again!"
+        return f"You Won in {self.stats["Last Game"]} Guesses! Type {self.stats["Player Name"]}.play() to Play Again!"
 
     def check_record(self):
         # This function checks if the new score is less than the player's record, so the record can be updated.
-        if isinstance(self.lastscore, int) and isinstance(self.record, int):
-            return self.lastscore < self.record
-        if self.record is None:
+        if isinstance(self.stats["Last Game"], int) and isinstance(self.stats["Record"], int):
+            return self.stats["Last Game"] < self.stats["Record"]
+        if self.stats["Record"] is None:
             return True
 
 if __name__ == "__main__":

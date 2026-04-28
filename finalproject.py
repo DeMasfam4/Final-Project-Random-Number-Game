@@ -85,7 +85,7 @@ class NumberGuess:
         self.attempts = 0
         self.gamesplayed += 1
         
-        if self.check_record():
+        if self.check_record(): # If true, update the record and give a different winning message.
             self.record = self.lastscore
             return f"You Got a New Record of {self.record} Guesses! Type {self.player}.play() to Play Again!"
 

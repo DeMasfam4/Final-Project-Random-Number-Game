@@ -29,4 +29,11 @@ then PLAYER is the same exact thing in another example.
 5) Close the terminal to exit the game, or type -- instance.play() -- again to play another game. (Stats will carry over matches).
 
 HAVE FUN!
+
+If your terminal is stating "Number Guess is not defined" than run the code below in the terminal before playing.
+
+python
+from finalproject import NumberGuess
+
+Then your game should work.
    

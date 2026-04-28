@@ -87,7 +87,7 @@ class NumberGuess:
         
         if self.check_record():
             self.record = self.lastscore
-            return f"You Won and Got a New Record of {self.record} Guesses! Type {self.player}.play() to Play Again!"
+            return f"You Got a New Record of {self.record} Guesses! Type {self.player}.play() to Play Again!"
 
         return f"You Won in {self.lastscore} Guesses! Type {self.player}.play() to Play Again!"
 

@@ -27,6 +27,7 @@ class NumberGuess:
         elif self.diff == "Extreme":
             random_int = random.randint(1, 1000)
         else:
+            # The hidden difficulty which is the result of the user not inputting a given difficulty.
             print("ERROR: Difficulty Does Not Exist. You Have Been Reassigned to ULTRA EXTREME Mode.")
             random_int = random.randint(1, 10000)
             self.diff = "ULTRA EXTREME"

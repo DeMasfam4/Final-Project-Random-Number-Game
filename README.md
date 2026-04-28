@@ -17,6 +17,8 @@ then PLAYER is the same exact thing in another example.
      Example:
      player = NumberGuess("corey", "Easy")
 
+   Capitalization MATTERS. "easy" is not the same as "Easy" --> You will be redirected to Hidden difficulty.
+
 2) To begin your first game.
 
    - Type (instance).play()

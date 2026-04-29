@@ -83,6 +83,7 @@ class NumberGuess:
 
         self.stats["Attempts"] += 1
 
+        # Change player stats and reset attempts for next match
         self.stats["Last Game"] = self.stats["Attempts"]
         self.stats["Attempts"] = 0
         self.stats["Games Played"] += 1

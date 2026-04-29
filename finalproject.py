@@ -102,5 +102,6 @@ class NumberGuess:
         if self.stats["Record"] is None:
             return True
 
+# The game starts (still need to create "player" in terminal) -- shows programming is running
 if __name__ == "__main__":
     print("Game Started. Create Your Player. WARNING: Your Difficulty Is Now Allowed to Be Changed. Choose Wisely.")

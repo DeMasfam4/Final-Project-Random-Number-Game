@@ -60,12 +60,14 @@ class NumberGuess:
             try:
                 guess = int((input("\nMake Your Guess: ")))
 
+                # Tells user to guess again if the input is outside of the range
                 while (guess > num_range_high) or (guess < 1):
                     if guess > num_range_high:
                         guess = int(input("That Number is Higher Than the Boundary! Guess Again: "))
                     elif guess < 1:
                         guess = int(input("That Number is Below the Boundary! Guess Again: "))
 
+                # If guess is greater than or less than num, increase/decrease attempts by 1 and guide the user towards the num
                 if guess > random_int:
                     print("Too High! Guess a Lower Number.")
                     self.stats["Attempts"] += 1
@@ -75,6 +77,7 @@ class NumberGuess:
                     self.stats["Attempts"] += 1
                     print(f"Attempts {self.stats["Attempts"]}")
 
+            # Prevents NON-integers from being input by user
             except ValueError:
                 print("That is Not a Integer! Try Again.")
 

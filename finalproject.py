@@ -91,6 +91,7 @@ class NumberGuess:
             self.stats["Record"] = self.stats["Last Game"]
             return f"You Got a New Record of {self.stats["Record"]} Guesses! Type {self.stats["Player Name"]}.play() to Play Again!"
 
+        # Normal win message when there is no new record
         return f"You Won in {self.stats["Last Game"]} Guesses! Type {self.stats["Player Name"]}.play() to Play Again!"
 
     def check_record(self):
